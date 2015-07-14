@@ -17,11 +17,12 @@ defined('_JEXEC') or die('Restricted access');
 					$link = JRoute::_('index.php?option=com_joomsquads&view=players&id=' . $row->id);
 				?>
 <tr>
-<td width="12%">Name: </td><td width="25%"><?php echo $row->name; ?>
+<td width="12%">Name: </td><td width="25%"><a href="<?php echo $link; ?>"><?php echo $row->name; ?></a>
 </tr>
 <tr>
 <td>Short Name: </td><td><?php echo $row->short_name; ?></td>
 </tr>
+<tr><td><img src="<?php echo $row->image; ?>" /></td></tr>
 <?php endforeach; ?>
 			<?php endif; ?>
 </table>

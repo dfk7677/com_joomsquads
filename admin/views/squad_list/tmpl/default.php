@@ -25,18 +25,21 @@ defined('_JEXEC') or die('Restricted Access');
 			<th width="2%">
 				<?php echo JText::_('COM_JOOMSQUADS_ID'); ?>
 			</th>
-			<th width="70%">
+			<th width="50%">
 				<?php echo JText::_('COM_JOOMSQUADS_SQUAD_NAME') ;?>
 			</th>
-			<th width="25%">
+			<th width="40%">
 				<?php echo JText::_('COM_JOOMSQUADS_SQUAD_SHORT_NAME'); ?>
+			</th>
+			<th width="5%">
+				<?php echo JText::_('COM_JOOMSQUADS_ORDERING'); ?>
 			</th>
 			
 		</tr>
 		</thead>
 		<tfoot>
 			<tr>
-				<td colspan="5">
+				<td colspan="6">
 					<?php echo $this->pagination->getListFooter(); ?>
 				</td>
 			</tr>
@@ -62,6 +65,9 @@ defined('_JEXEC') or die('Restricted Access');
 						</td>
 						<td align="center">
 							<?php echo $row->short_name; ?>
+						</td>
+						<td align="center">
+							<?php echo $row->ordering; ?>
 						</td>
 						
 					</tr>

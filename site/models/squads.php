@@ -30,8 +30,8 @@ class JoomSquadsModelsquads extends JModelList
  
 		// Create the base select statement.
 		$query->select('*')
-                ->from($db->quoteName('#__jsq_squads'));
-		
+                ->from($db->quoteName('#__jsq_squads'))
+				->order('ordering ASC');
 		return $query;
 	}
 }

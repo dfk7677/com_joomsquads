@@ -17,6 +17,7 @@ CREATE TABLE `#__jsq_squads` (
 	`name` VARCHAR(255) NOT NULL,
 	`short_name` VARCHAR(255) NOT NULL,
 	`ordering`       INT(11)     NOT NULL,
+	`image` VARCHAR(255) NOT NULL,
 	PRIMARY KEY (`id`)
 )
 ENGINE =MyISAM
