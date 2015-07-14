@@ -11,7 +11,7 @@
 				label="COM_JOOMSQUADS_SQUAD_NAME_LABEL"
 				description="COM_JOOMSQUADS_SQUAD_NAME_DESC"
 				size="40"
-				class="inputbox"
+				class="inputbox required"
 				default=""
 				/>
 		<field
@@ -29,8 +29,8 @@
 				label="COM_JOOMSQUADS_ORDERING"
 				description="COM_JOOMSQUADS_ORDERING"
 				size="5"
-				class="inputbox"
-				default="1"
+				class="required validate-numeric"
+				
 				/>
 				
 		<field

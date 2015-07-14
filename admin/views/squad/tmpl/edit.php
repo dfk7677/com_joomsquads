@@ -9,13 +9,16 @@
  
 // No direct access to this file
 defined('_JEXEC') or die('Restricted Access');
+JHtml::_('behavior.formvalidator');
 ?>
+
+
 <div id="j-sidebar-container" class="span2">
     <?php echo $this->sidebar; ?>
 </div>
 <div id="j-main-container" class="span10">
      <form action="<?php echo JRoute::_('index.php?option=com_joomsquads&view=squad&layout=edit&id=' . (int) $this->item->id); ?>"
-    method="post" name="adminForm" id="adminForm">
+	 method="post" name="adminForm" id="adminForm" class="form-validate">
     <div class="form-horizontal">
         <fieldset class="adminform">
             <legend><?php echo JText::_('COM_JOOMSQUADS_SQUAD_DETAILS'); ?></legend>
@@ -35,3 +38,4 @@ defined('_JEXEC') or die('Restricted Access');
     <?php echo JHtml::_('form.token'); ?>
 </form>
 </div>
+

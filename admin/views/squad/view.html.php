@@ -55,6 +55,9 @@ class JoomSquadsViewSquad extends JViewLegacy
 		
 		// Display the view
 		parent::display($tpl);
+		
+		//Set the document
+		$this->setDocument();
 	}
 	/**
 	 * Add the page title and toolbar.
@@ -93,6 +96,23 @@ class JoomSquadsViewSquad extends JViewLegacy
 	{
 		require_once JPATH_COMPONENT . '/helpers/joomsquads.php';
 		JoomSquadsHelper::addSubmenu('squad');
+	}
+	
+	/**
+	 * Method to set up the document properties
+	 *
+	 * @return void
+	 */
+	protected function setDocument() 
+	{
+		$isNew = ($this->item->id < 1);
+		$document = JFactory::getDocument();
+		$document->setTitle($isNew ? JText::_('COM_JOOMSQUADS_SQUAD_CREATING') :
+                JText::_('COM_JOOMSQUADS_SQUAD_EDITING'));
+//		$document->addScript(JURI::root() . $this->script);
+		
+		$document->addScript(JURI::base() . "components/com_joomsquads/views/squad/submitbutton.js");
+		JText::script('COM_JOOMSQUADS_INVALID_VALUE');
 	}
 	
 }
