@@ -11,9 +11,6 @@
 defined('_JEXEC') or die('Restricted Access');
 ?>
 
-
-
-
 <div id="j-sidebar-container" class="span2">
     <?php echo $this->sidebar; ?>
 </div>

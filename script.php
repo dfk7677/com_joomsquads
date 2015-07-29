@@ -25,11 +25,9 @@ class com_joomsquadsInstallerScript
 		// $parent is the class calling this method
 		$parent->getParent()->setRedirectURL('index.php?option=com_joomsquads');
 		// create a folder inside your images folder
-		if(JFolder::create(JPATH_ROOT.DS.'images'.DS.'squads')) {
-		echo "Folder created successfully";
-		} else {
-		echo "Unable to create folder";
-		}
+		JFolder::create(JPATH_ROOT.DS.'images'.DS.'squads');
+		JFolder::create(JPATH_ROOT.DS.'images'.DS.'players');
+		
 	}
  
 	/**

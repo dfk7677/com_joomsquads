@@ -11,7 +11,7 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * HTML View class for the JeSport Component
+ * HTML View class for the JoomSquads Component
  *
  * @since  0.0.1
  */
