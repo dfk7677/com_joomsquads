@@ -35,15 +35,13 @@ defined('_JEXEC') or die('Restricted Access');
 			<th width="36%">
 				<?php echo JText::_('COM_JOOMSQUADS_PLAYER_LAST_NAME'); ?>
 			</th>
-			<th width="5%">
-				<?php echo JText::_('COM_JOOMSQUADS_ORDERING'); ?>
-			</th>
+			
 			
 		</tr>
 		</thead>
 		<tfoot>
 			<tr>
-				<td colspan="7">
+				<td colspan="6">
 					<?php echo $this->pagination->getListFooter(); ?>
 				</td>
 			</tr>
@@ -73,9 +71,7 @@ defined('_JEXEC') or die('Restricted Access');
 						<td align="center">
 							<?php echo $row->last_name; ?>
 						</td>
-						<td align="center">
-							<?php echo $row->ordering; ?>
-						</td>
+						
 						
 					</tr>
 				<?php endforeach; ?>

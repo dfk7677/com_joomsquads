@@ -13,7 +13,7 @@ defined('_JEXEC') or die('Restricted access');
 /**
  * Table Classes
  *
- * @since  0.0.1
+ * @since  0.1.0
  */
 class playerTableJoomSquads extends JTable
 {

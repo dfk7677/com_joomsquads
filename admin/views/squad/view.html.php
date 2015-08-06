@@ -47,8 +47,8 @@ class JoomSquadsViewSquad extends JViewLegacy
 		
 		 // Set the toolbar
 		$this->addToolBar();
-		$this->addSideBar();		
-		$this->sidebar = JHtmlSidebar::render();
+	/*	$this->addSideBar();		
+		$this->sidebar = JHtmlSidebar::render();*/
 		
 		
  

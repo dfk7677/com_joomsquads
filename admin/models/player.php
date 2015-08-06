@@ -78,7 +78,7 @@ defined('_JEXEC') or die('Restricted access');
 			'com_joomsquads.edit.player.data',
 			array()
 		);
- 
+ 		
 		if (empty($data))
 		{
 			$data = $this->getItem();
@@ -87,7 +87,47 @@ defined('_JEXEC') or die('Restricted access');
 		return $data;
 	}
 	
-	
+	public function save($data) {
+		$jinput = JFactory::getApplication()->input;
+		$squads = $jinput->get('squad','','ARRAY');
+		$positions = $jinput->get('position','','ARRAY');
+		$ordering = $jinput->get('ordering','','ARRAY');
+		// Get a db connection.
+		$db = JFactory::getDbo();
+ 
+		// Create a new query object.
+		$query = $db->getQuery(true);
+		
+		$conditions = array($db->quoteName('player_id'). ' = ' . $data['id']);
+												
+		$query->delete($db->quoteName('#__jsq_playerssquads'))->where($conditions);
+ 
+		$db->setQuery($query);
+ 
+		$result = $db->execute();			
+		
+		$i =0;
+		if(is_array($squads)) {
+			
+			foreach($squads as $squad) {
+					$query = $db->getQuery(true);
+					$columns = array('squad_id', 'player_id', 'position', 'squad_ordering');	
+					$values = array($squad,$data['id'],$db->quote($positions[$i]),$ordering[$i]);
+					$query
+    					->insert($db->quoteName('#__jsq_playerssquads'))
+    					->columns($db->quoteName($columns))
+    					->values(implode(',', $values));	
+    				$db->setQuery($query);
+					$db->execute();
+					$i++;
+			}
+			
+		}
+		
+		
+		return true;
+		
+	}
 	
 	
 }

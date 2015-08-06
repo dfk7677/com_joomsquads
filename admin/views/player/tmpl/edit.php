@@ -13,9 +13,7 @@ JHtml::_('behavior.formvalidator');
 ?>
 
 
-<div id="j-sidebar-container" class="span2">
-    <?php echo $this->sidebar; ?>
-</div>
+
 <div id="j-main-container" class="span10">
      <form action="<?php echo JRoute::_('index.php?option=com_joomsquads&view=player&layout=edit&id=' . (int) $this->item->id); ?>"
 	 method="post" name="adminForm" id="adminForm" class="form-validate">
@@ -38,4 +36,6 @@ JHtml::_('behavior.formvalidator');
     <?php echo JHtml::_('form.token'); ?>
 </form>
 </div>
+
+
 

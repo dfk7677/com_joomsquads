@@ -12,7 +12,7 @@ defined('_JEXEC') or die('Restricted access');
 /**
  * JoomSquads Component Controller
  *
- * @since  0.0.1
+ * @since  0.1.0
  */
 class JoomSquadsController extends JControllerLegacy
 {

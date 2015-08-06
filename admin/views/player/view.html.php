@@ -47,8 +47,8 @@ class JoomSquadsViewplayer extends JViewLegacy
 		
 		 // Set the toolbar
 		$this->addToolBar();
-		$this->addSideBar();		
-		$this->sidebar = JHtmlSidebar::render();
+	/*	$this->addSideBar();		
+		$this->sidebar = JHtmlSidebar::render();*/
 		
 		
  
@@ -110,7 +110,7 @@ class JoomSquadsViewplayer extends JViewLegacy
 		$document->setTitle($isNew ? JText::_('COM_JOOMSQUADS_PLAYER_CREATING') :
                 JText::_('COM_JOOMSQUADS_PLAYER_EDITING'));
 //		$document->addScript(JURI::root() . $this->script);
-		
+		$document->addScript(JURI::base() . "components/com_joomsquads/views/player/checkbox.js");
 		$document->addScript(JURI::base() . "components/com_joomsquads/views/player/submitbutton.js");
 		JText::script('COM_JOOMSQUADS_INVALID_VALUE');
 	}
