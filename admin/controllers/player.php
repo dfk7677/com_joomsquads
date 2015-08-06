@@ -6,14 +6,17 @@
  * @copyright (C) 2015 Dionysis Kapatsoris
  * @license http://opensource.org/licenses/GPL-3.0 GNU/GPLv3
 **/
- 
- // No direct access to this file
+
+// No direct access to this file
 defined('_JEXEC') or die('Restricted access');
+ 
 /**
- * JoomSquads Component Controller
+ * player controller
  *
- * @since  0.1.0
+ * @since  0.0.1
  */
-class JoomSquadsController extends JControllerLegacy
+ 
+ class JoomSquadsControllerplayer extends JControllerForm
 {
+	protected $view_list = 'player_list';
 }

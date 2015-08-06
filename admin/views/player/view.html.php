@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class JoomSquadsViewSquad extends JViewLegacy
+class JoomSquadsViewplayer extends JViewLegacy
 {
 
 	/**
@@ -25,7 +25,7 @@ class JoomSquadsViewSquad extends JViewLegacy
 	 */
 	protected $form = null;
 	/**
-	 * Display the JoomSquads admin squad view
+	 * Display the JoomSquads admin player view
 	 *
 	 * @param   string  $tpl  The name of the template file to parse; automatically searches through the template paths.
 	 *
@@ -77,17 +77,17 @@ class JoomSquadsViewSquad extends JViewLegacy
  
 		if ($isNew)
 		{
-			$title = JText::_('COM_JOOMSQUADS_MANAGER_SQUAD_NEW');
+			$title = JText::_('COM_JOOMSQUADS_MANAGER_PLAYER_NEW');
 		}
 		else
 		{
-			$title = JText::_('COM_JOOMSQUADS_MANAGER_SQUAD_EDIT');
+			$title = JText::_('COM_JOOMSQUADS_MANAGER_PLAYER_EDIT');
 		}
-		JToolBarHelper::title($title, 'squad');
-		JToolBarHelper::apply('squad.apply');
-		JToolBarHelper::save('squad.save');
+		JToolBarHelper::title($title, 'player');
+		JToolBarHelper::apply('player.apply');
+		JToolBarHelper::save('player.save');
 		JToolBarHelper::cancel(
-			'squad.cancel',
+			'player.cancel',
 			$isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE'
 		);
 	}
@@ -107,11 +107,11 @@ class JoomSquadsViewSquad extends JViewLegacy
 	{
 		$isNew = ($this->item->id < 1);
 		$document = JFactory::getDocument();
-		$document->setTitle($isNew ? JText::_('COM_JOOMSQUADS_SQUAD_CREATING') :
-                JText::_('COM_JOOMSQUADS_SQUAD_EDITING'));
+		$document->setTitle($isNew ? JText::_('COM_JOOMSQUADS_PLAYER_CREATING') :
+                JText::_('COM_JOOMSQUADS_PLAYER_EDITING'));
 //		$document->addScript(JURI::root() . $this->script);
-		
-		$document->addScript(JURI::base() . "components/com_joomsquads/views/squad/submitbutton.js");
+		$document->addScript(JURI::base() . "components/com_joomsquads/views/player/checkbox.js");
+		$document->addScript(JURI::base() . "components/com_joomsquads/views/player/submitbutton.js");
 		JText::script('COM_JOOMSQUADS_INVALID_VALUE');
 	}
 	
