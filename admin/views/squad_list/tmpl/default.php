@@ -29,8 +29,11 @@ defined('_JEXEC') or die('Restricted Access');
 			<th width="50%">
 				<?php echo JText::_('COM_JOOMSQUADS_SQUAD_NAME') ;?>
 			</th>
-			<th width="40%">
+			<th width="30%">
 				<?php echo JText::_('COM_JOOMSQUADS_SQUAD_SHORT_NAME'); ?>
+			</th>
+			<th width="30%">
+				<?php echo JText::_('COM_JOOMSQUADS_PUBLISHED'); ?>
 			</th>
 			<th width="5%">
 				<?php echo JText::_('COM_JOOMSQUADS_ORDERING'); ?>
@@ -66,6 +69,9 @@ defined('_JEXEC') or die('Restricted Access');
 						</td>
 						<td align="center">
 							<?php echo $row->short_name; ?>
+						</td>
+						<td align="center">
+							<?php  echo JHtml::_('jgrid.published', $row->published, $i,'squad_list.');  ?>
 						</td>
 						<td align="center">
 							<?php echo $row->ordering; ?>

@@ -109,8 +109,6 @@ class JoomSquadsViewSquad extends JViewLegacy
 		$document = JFactory::getDocument();
 		$document->setTitle($isNew ? JText::_('COM_JOOMSQUADS_SQUAD_CREATING') :
                 JText::_('COM_JOOMSQUADS_SQUAD_EDITING'));
-//		$document->addScript(JURI::root() . $this->script);
-		
 		$document->addScript(JURI::base() . "components/com_joomsquads/views/squad/submitbutton.js");
 		JText::script('COM_JOOMSQUADS_INVALID_VALUE');
 	}

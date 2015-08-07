@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class JoomSquadsModelplayer_list extends JModelList
+class JoomSquadsModelPlayer_list extends JModelList
 {
 	/**
 	 * Method to build an SQL query to load the list data.

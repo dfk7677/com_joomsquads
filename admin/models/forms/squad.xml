@@ -32,7 +32,18 @@
 				class="required validate-numeric"
 				
 				/>
-				
+		
+		<field
+				name="published"
+				type="radio"
+				label="COM_JOOMSQUADS_PUBLISHED"
+				description="COM_JOOMSQUADS_DESC_PUBLISHED"
+				default="0"
+				class="btn-group btn-group-yesno">				
+				<option value="0">Unpublished</option>
+  				<option value="1">Published</option>
+		</field>
+		
 		<field
 				name="image"
 				type="media"

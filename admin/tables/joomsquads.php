@@ -30,7 +30,7 @@ class playerTableJoomSquads extends JTable
 	public function loadSquadPlayers($sid) 
 	{
 		$db = $this->getDBO();
-        $query = $db->getQuery(true);
+      $query = $db->getQuery(true);
 		$query->select($db->quoteName('*'));
 		$query->from($db->quoteName('#__jsq_players'));
 		$query->where($db->quoteName('squad_id') . ' = '. $db->quote($sid));

@@ -16,7 +16,7 @@ defined('_JEXEC') or die('Restricted access');
  * @since  0.0.1
  */
  
- class JoomSquadsModelplayer extends JModelAdmin
+ class JoomSquadsModelPlayer extends JModelAdmin
 {
 	/**
 	 * Method to get a table object, load it if necessary.
