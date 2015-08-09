@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metadata>
-	<layout title="COM_JOOMSQUADS_SQUADS_MENU_DEFAULT_TITLE">
-		<message>COM_JOOMSQUADS_SQUADS_MENU_DEFAULT_DESC</message>
-	</layout>
+    <layout title="COM_JOOMSQUADS_SQUADS_MENU_DEFAULT_TITLE">
+        <message>COM_JOOMSQUADS_SQUADS_MENU_DEFAULT_DESC</message>
+    </layout>
 </metadata>
