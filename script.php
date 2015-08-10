@@ -24,8 +24,23 @@ class com_joomsquadsInstallerScript {
         // $parent is the class calling this method
         $parent->getParent()->setRedirectURL('index.php?option=com_joomsquads');
         // create a folder inside your images folder
-        JFolder::create(JPATH_ROOT . DS . 'images' . DS . 'squads');
-        JFolder::create(JPATH_ROOT . DS . 'images' . DS . 'players');
+        
+        if(!JFolder::exists(JPATH_ROOT . DIRECTORY_SEPARATOR.'media'.
+                DIRECTORY_SEPARATOR.
+                'joomsquads'.DIRECTORY_SEPARATOR.'squads')) {
+            $path = JPATH_SITE . DIRECTORY_SEPARATOR.'media'.DIRECTORY_SEPARATOR.
+                 'joomsquads';
+            $folder = 'squads';
+            JFolder::create( $path .DIRECTORY_SEPARATOR. $folder, 0755 );
+        }
+        if(!JFolder::exists(JPATH_ROOT . DIRECTORY_SEPARATOR.'media'.
+                DIRECTORY_SEPARATOR.
+                'joomsquads'.DIRECTORY_SEPARATOR.'players')) {
+            $path = JPATH_SITE . DIRECTORY_SEPARATOR.'media'.DIRECTORY_SEPARATOR.
+                 'joomsquads';
+            $folder = 'players';
+            JFolder::create( $path .DIRECTORY_SEPARATOR. $folder, 0755 );
+        }
     }
 
     /**
@@ -44,6 +59,22 @@ class com_joomsquadsInstallerScript {
      */
     function update($parent) {
         // $parent is the class calling this method
+        if(!JFolder::exists(JPATH_ROOT . DIRECTORY_SEPARATOR.'media'.
+                DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.
+                'joomsquads'.DIRECTORY_SEPARATOR.'squads')) {
+            $path = JPATH_SITE . DIRECTORY_SEPARATOR.'media'.DIRECTORY_SEPARATOR.
+                 'joomsquads';
+            $folder = 'squads';
+            JFolder::create( $path .DIRECTORY_SEPARATOR. $folder, 0755 );
+        }
+        if(!JFolder::exists(JPATH_ROOT . DIRECTORY_SEPARATOR.'media'.
+                DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.
+                'joomsquads'.DIRECTORY_SEPARATOR.'players')) {
+            $path = JPATH_SITE . DIRECTORY_SEPARATOR.'media'.DIRECTORY_SEPARATOR.
+                 'joomsquads';
+            $folder = 'players';
+            JFolder::create( $path .DIRECTORY_SEPARATOR. $folder, 0755 );
+        }
         echo '<p>' . JText::sprintf('COM_JOOMSQUADS_UPDATE_TEXT', $parent->get('manifest')->version) . '</p>';
     }
 

@@ -18,7 +18,7 @@ defined('_JEXEC') or die('Restricted access');
 class JoomSquadsModelPlayer_list extends JModelList {
 
 	public function __construct($config = array()) {
-	 	$config['filter_fields']=array('s.squad_id');
+	 	$config['filter_fields']=array('ps.squad_id');
 		parent::__construct($config);
 	}
 
@@ -33,10 +33,14 @@ class JoomSquadsModelPlayer_list extends JModelList {
         $query = $db->getQuery(true);
 
         // Create the base select statement.
-        $query->select('p.*','s.squad_id');
+        $query->select(array('p.*','ps.squad_id'));
         $query->from($db->quoteName('#__jsq_players','p'));
-	$query->leftJoin($db->quoteName('#__jsq_playerssquads','s') . 
-		' ON ('.$db->quoteName('p.id').' = '.$db->quoteName('s.player_id').')');
+	$query->leftJoin($db->quoteName('#__jsq_playerssquads','ps') . 
+		' ON ('.$db->quoteName('p.id').' = '.
+                $db->quoteName('ps.player_id').')');
+     /*   $query->leftJoin($db->quoteName('#__jsq_squads','s') . 
+		' ON ('.$db->quoteName('ps.squad_id').' = '.
+                $db->quoteName('s.id').')');*/
         $query->order('p.nickname ASC');
         
         // Filter squad
@@ -45,7 +49,7 @@ class JoomSquadsModelPlayer_list extends JModelList {
 	
 	if (!empty($squad_id)) {
            
-            $query->where('s.squad_id='.$squad_id );
+            $query->where('ps.squad_id='.$squad_id );
 	}
         
         

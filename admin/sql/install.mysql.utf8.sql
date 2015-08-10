@@ -7,7 +7,7 @@ CREATE TABLE `#__jsq_players` (
 	`image` VARCHAR(255) NOT NULL,
 	PRIMARY KEY (`id`)
 )
-ENGINE =MyISAM
+ENGINE =InnoDB
 DEFAULT CHARSET =utf8;
 
 CREATE TABLE `#__jsq_squads` (
@@ -19,7 +19,7 @@ CREATE TABLE `#__jsq_squads` (
 	`image` VARCHAR(255) NOT NULL,
 	PRIMARY KEY (`id`)
 )
-ENGINE =MyISAM
+ENGINE =InnoDB
 DEFAULT CHARSET =utf8;
 
 CREATE TABLE IF NOT EXISTS `#__jsq_playerssquads` (
@@ -28,4 +28,4 @@ CREATE TABLE IF NOT EXISTS `#__jsq_playerssquads` (
   `position` VARCHAR(255) NOT NULL,
   `squad_ordering` int(11) NOT NULL,
 	PRIMARY KEY (`squad_id`,`player_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ;

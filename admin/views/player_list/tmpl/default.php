@@ -19,19 +19,20 @@ $squadsOptions=$squads->getOptions();
     <?php echo $this->sidebar; ?>
 </div>
 <div id="j-main-container" class="span10">
-    <fieldset id="filter-bar">
-	 Select Squad: <div class="filter-select fltrt">
-           <select name="filter_squad_id" class="inputbox" onchange="this.form.submit()">
+    
+        
+    <form action="index.php?option=com_joomsquads&view=player_list" method="post" id="adminForm" name="adminForm">
+        <fieldset id="filter-bar">
+	 <div class="filter-select fltrt" style="float:right;">
+           Select Squad: <select name="filter_squad_id" class="inputbox" onchange="this.form.submit()">
 		<option value=""> All Players </option>
                     <?php echo JHtml::_('select.options', $squadsOptions,
                             'value', 'text', 
                             $this->state->get('filter.squad_id'));?>
 			</select>
  
-	</div>
-    </fieldset>
-        
-    <form action="index.php?option=com_joomsquads&view=player_list" method="post" id="adminForm" name="adminForm">
+            </div>
+        </fieldset><br>
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -42,22 +43,24 @@ $squadsOptions=$squads->getOptions();
                     <th width="2%">
                         <?php echo JText::_('COM_JOOMSQUADS_ID'); ?>
                     </th>
-                    <th width="26%">
+                    <th width="20%">
                         <?php echo JText::_('COM_JOOMSQUADS_PLAYER_NICKNAME'); ?>
                     </th>
-                    <th width="26%">
+                    <th width="20%">
                         <?php echo JText::_('COM_JOOMSQUADS_PLAYER_FIRST_NAME'); ?>
                     </th>
-                    <th width="36%">
+                    <th width="30%">
                         <?php echo JText::_('COM_JOOMSQUADS_PLAYER_LAST_NAME'); ?>
                     </th>
-
+                    <th width="25%">
+                        <?php echo JText::_('COM_JOOMSQUADS_PLAYER_SQUADS'); ?>
+                    </th>
 
                 </tr>
             </thead>
             <tfoot>
                 <tr>
-                    <td colspan="6">
+                    <td colspan="7">
                         <?php echo $this->pagination->getListFooter(); ?>
                     </td>
                 </tr>
@@ -87,6 +90,9 @@ $squadsOptions=$squads->getOptions();
                             </td>
                             <td align="center">
                                 <?php echo $row->last_name; ?>
+                            </td>
+                            <td align="center">
+                                <?php echo $this->getSquads($row->id); ?>
                             </td>
 
 
