@@ -85,31 +85,40 @@ class JoomSquadsModelPlayer extends JModelAdmin {
         $ordering = $jinput->get('ordering', '', 'ARRAY');
         // Get a db connection.
         $db = JFactory::getDbo();
-
-        // Create a new query object.
-        $query = $db->getQuery(true);
-
-        $conditions = array($db->quoteName('player_id') . ' = ' . $data['id']);
-
-        $query->delete($db->quoteName('#__jsq_playerssquads'))->where($conditions);
-
-        $db->setQuery($query);
-
-        $result = $db->execute();
-
+        try {
+            $db->transactionStart();
+            $query = $db->getQuery(true);
+            $conditions = array($db->quoteName('player_id') . ' = ' . $data['id']);
+            $query->delete($db->quoteName('#__jsq_playerssquads'))->where($conditions);
+            $db->setQuery($query);
+            $result = $db->execute();
+            $db->transactionCommit();
+        } catch (Exception $e) {
+            // catch any database errors.
+            $db->transactionRollback();
+            JErrorPage::render($e);
+        }
         $i = 0;
         if (is_array($squads)) {
 
             foreach ($squads as $squad) {
-                $query = $db->getQuery(true);
-                $columns = array('squad_id', 'player_id', 'position', 'squad_ordering');
-                $values = array($squad, $data['id'], $db->quote($positions[$i]), $ordering[$i]);
-                $query
-                        ->insert($db->quoteName('#__jsq_playerssquads'))
-                        ->columns($db->quoteName($columns))
-                        ->values(implode(',', $values));
-                $db->setQuery($query);
-                $db->execute();
+                try {
+                    $db->transactionStart();
+                    $query = $db->getQuery(true);
+                    $columns = array('squad_id', 'player_id', 'position', 'squad_ordering');
+                    $values = array($squad, $data['id'], $db->quote($positions[$i]), $ordering[$i]);
+                    $query
+                            ->insert($db->quoteName('#__jsq_playerssquads'))
+                            ->columns($db->quoteName($columns))
+                            ->values(implode(',', $values));
+                    $db->setQuery($query);
+                    $db->execute();
+                    $db->transactionCommit();  
+                } catch (Exception $e) {
+                    // catch any database errors.
+                    $db->transactionRollback();
+                    JErrorPage::render($e);
+                }
                 $i++;
             }
         }

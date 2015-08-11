@@ -26,8 +26,6 @@ class JoomSquadsModelSquad_list extends JModelList {
         // Initialize variables.
         $db = JFactory::getDbo();
         $query = $db->getQuery(true);
-
-        // Create the base select statement.
         $query->select('*')
                 ->from($db->quoteName('#__jsq_squads'))
                 ->order('ordering ASC');

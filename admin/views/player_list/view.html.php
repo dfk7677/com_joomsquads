@@ -77,11 +77,8 @@ class JoomSquadsViewplayer_list extends JViewLegacy {
             $query->leftJoin($db->quoteName('#__jsq_playerssquads','ps') . 
             ' ON ('.$db->quoteName('s.id').' = '.$db->quoteName('ps.squad_id').')');
             $query->where('ps.player_id = '.$pid);
-	
             $db->setQuery($query);
-            
             $result = $db->loadColumn();
-		
             $db->transactionCommit();    
 	}
        

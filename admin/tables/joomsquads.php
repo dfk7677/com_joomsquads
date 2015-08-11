@@ -28,17 +28,21 @@ class playerTableJoomSquads extends JTable {
 
     public function loadSquadPlayers($sid) {
         $db = $this->getDBO();
-        $query = $db->getQuery(true);
-        $query->select($db->quoteName('*'));
-        $query->from($db->quoteName('#__jsq_players'));
-        $query->where($db->quoteName('squad_id') . ' = ' . $db->quote($sid));
-        $query->order('ordering DEC');
-        // Reset the query using our newly populated query object.
-        $db->setQuery($query);
-
-        // Load the results as a list of stdClass objects (see later for more options on retrieving data).
-        $results = $db->loadObjectList();
-
+        try {
+            $db->transactionStart();
+            $query = $db->getQuery(true);
+            $query->select($db->quoteName('*'));
+            $query->from($db->quoteName('#__jsq_players'));
+            $query->where($db->quoteName('squad_id') . ' = ' . $db->quote($sid));
+            $query->order('ordering DEC');
+            $db->setQuery($query);
+            $results = $db->loadObjectList();
+            $db->transactionCommit();
+        } catch (Exception $e) {
+            // catch any database errors.
+            $db->transactionRollback();
+            JErrorPage::render($e);
+        }
         return $results;
     }
 
