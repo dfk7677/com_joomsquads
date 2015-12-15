@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset>
+        <field
+            name="id"
+            type="hidden"
+        />
+        <field
+            name="name"
+            type="text"
+            label="COM_JOOMSQUADS_APPLICATION_NAME_LABEL"
+            description="COM_JOOMSQUADS_APPLICATION_NAME_DESC"
+            size="40"
+            
+            readonly="true"
+        />
+        <field
+            name="email"
+            type="text"
+            label="COM_JOOMSQUADS_APPLICATION_EMAIL_LABEL"
+            description="COM_JOOMSQUADS_APPLICATION_EMAIL_DESC"
+            size="10"
+            
+            readonly="true"
+        />
+        <field
+            name="nickname"
+            type="text"
+            label="COM_JOOMSQUADS_APPLICATION_NICKNAME_LABEL"
+            description="COM_JOOMSQUADS_APPLICATION_NICKNAME_DESC"
+            size="20"
+            
+            readonly="true"
+        />
+        <field
+            name="squad_id"
+            type="hidden"
+        />
+        <field
+            name="squadname"
+            type="squadname"
+            label="COM_JOOMSQUADS_APPLICATION_SQUAD_LABEL"
+            description="COM_JOOMSQUADS_APPLICATION_SQUAD_DESC"
+				
+        />
+        
+        <field
+            name="age"
+            type="text"
+            label="COM_JOOMSQUADS_APPLICATION_AGE_LABEL"
+            description="COM_JOOMSQUADS_APPLICATION_AGE_DESC"
+            size="2"
+           
+            readonly="true"
+        />
+        <field
+            name="info"
+            type="textarea"
+            label="COM_JOOMSQUADS_APPLICATION_INFO_LABEL"
+            description="COM_JOOMSQUADS_APPLICATION_INFO_DESC"
+            rows="4"
+            columns="40"
+            
+            readonly="true"
+        />
+        
+        <field
+            name="date_sent"
+            type="calendar"
+            label="COM_JOOMSQUADS_APPLICATION_DATE_SENT_LABEL"
+            description="COM_JOOMSQUADS_APPLICATION_DATE_SENT_DESC"
+            
+            readonly="true"
+        />
+         
+        
+               
+       
+    </fieldset>
+</form>

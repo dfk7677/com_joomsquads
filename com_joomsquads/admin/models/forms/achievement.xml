@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset>
+        <field
+            name="id"
+            type="hidden"
+        />
+        <field
+            name="place"
+            type="integer"
+            label="COM_JOOMSQUADS_ACHIEVEMENTS_PLACE_LABEL"
+            description="COM_JOOMSQUADS_ACHIEVEMENTS_PLACE_DESC"            
+            first="1" 
+            last="3"
+            step="1"
+        />
+        <field
+            name="squad"
+            type="text"
+            label="COM_JOOMSQUADS_ACHIEVEMENTS_SQUAD_LABEL"
+            description="COM_JOOMSQUADS_ACHIEVEMENTS_SQUAD_DESC"
+            size="40"
+            class="inputbox required"
+            default=""
+        />
+        <field
+            name="date_won"
+            type="calendar"
+            label="COM_JOOMSQUADS_ACHIEVEMENT_DATE_LABEL"
+            description="COM_JOOMSQUADS_ACHIEVEMENT_DATE_DESC"
+            default="NOW"
+            
+        />
+        <field
+            name="competition"
+            type="text"
+            label="COM_JOOMSQUADS_ACHIEVEMENTS_COMPETITION_LABEL"
+            description="COM_JOOMSQUADS_ACHIEVEMENTS_COMPETITION_DESC"
+            size="40"
+            class="inputbox required"
+            default=""
+        />
+        
+        <field
+            name="competition_url"
+            type="URL"
+            label="COM_JOOMSQUADS_ACHIEVEMENTS_URL_LABEL"
+            description="COM_JOOMSQUADS_ACHIEVEMENTS_URL_DESC"
+            size="40"
+            class="inputbox"
+            default=""
+        />
+        
+        <field
+            name="prizepot"
+            type="text"
+            label="COM_JOOMSQUADS_ACHIEVEMENTS_PRIZE_LABEL"
+            description="COM_JOOMSQUADS_ACHIEVEMENTS_PRIZE_DESC"
+            size="40"
+            class="inputbox"
+            default=""
+        />
+		
+        
+		
+        
+    </fieldset>
+</form>

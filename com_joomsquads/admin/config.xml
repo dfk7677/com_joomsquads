@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset
+		name="applications"
+		label="COM_JOOMSQUADS_CONFIG_APPLICATIONS_SETTINGS_LABEL"
+		description="COM_JOOMSQUADS_CONFIG_APPLICATIONS_SETTINGS_DESC"
+	>
+        <field
+            name="send_accept"
+            type="radio"
+            label="COM_JOOMSQUADS_CONFIGURATION_SEND_ACCEPT_EMAIL_LABEL"
+            description="COM_JOOMSQUADS_CONFIGURATION_SEND_ACCEPT_EMAIL_DESC"
+            default="0"
+            class="btn-group btn-group-yesno">				
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </field>
+        <field
+            name="send_reject"
+            type="radio"
+            label="COM_JOOMSQUADS_CONFIGURATION_SEND_REJECT_EMAIL_LABEL"
+            description="COM_JOOMSQUADS_CONFIGURATION_SEND_REJECT_EMAIL_DESC"
+            default="0"
+            class="btn-group btn-group-yesno">				
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </field>
+        <field
+            name="subject_accept"
+            type="text"
+            label="COM_JOOMSQUADS_CONFIGURATION_ACCEPT_SUBJECT_LABEL"
+            description="COM_JOOMSQUADS_CONFIGURATION_ACCEPT_SUBJECT_DESC"
+            
+            
+        />
+        <field
+            name="accept_email"
+            type="editor"
+            label="COM_JOOMSQUADS_CONFIGURATION_ACCEPT_EMAIL_LABEL"
+            description="COM_JOOMSQUADS_CONFIGURATION_ACCEPT_EMAIL_DESC"
+            rows="20"
+            columns="80"
+            filter="safehtml"
+        />
+        <field
+            name="subject_reject"
+            type="text"
+            label="COM_JOOMSQUADS_CONFIGURATION_REJECT_SUBJECT_LABEL"
+            description="COM_JOOMSQUADS_CONFIGURATION_REJECT_SUBJECT_DESC"
+            
+            
+        />
+        <field
+            name="reject_email"
+            type="editor"
+            label="COM_JOOMSQUADS_CONFIGURATION_REJECT_EMAIL_LABEL"
+            description="COM_JOOMSQUADS_CONFIGURATION_REJECT_EMAIL_DESC"
+            rows="5"
+            columns="80"
+            filter="safehtml"
+        />
+        <field
+            name="moderators_emails"
+            type="text"
+            label="COM_JOOMSQUADS_CONFIGURATION_MODERATOR_EMAILS_LABEL"
+            description="COM_JOOMSQUADS_CONFIGURATION_MODERATOR_EMAILS_DESC"
+            
+            
+        />
+		
+        
+		
+        
+    </fieldset>
+</config>
