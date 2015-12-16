@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset addfieldpath="/administrator/components/com_joomsquads/models/fields">
+        <field
+            name="id"
+            type="hidden"
+        />
+        <field
+            name="nickname"
+            type="text"
+            label="COM_JOOMSQUADS_PLAYER_NICKNAME_LABEL"
+            description="COM_JOOMSQUADS_PLAYER_NICKNAME_DESC"
+            size="20"
+            class="inputbox required"
+            default=""
+        />
+        <field
+            name="first_name"
+            type="text"
+            label="COM_JOOMSQUADS_PLAYER_FIRSTNAME_LABEL"
+            description="COM_JOOMSQUADS_PLAYER_FIRSTNAME_DESC"
+            size="20"
+            class="inputbox"
+            default=""
+        />
+        <field
+            name="last_name"
+            type="text"
+            label="COM_JOOMSQUADS_PLAYER_LASTNAME_LABEL"
+            description="COM_JOOMSQUADS_PLAYER_LASTNAME_DESC"
+            size="20"
+            class="inputbox"
+            default=""
+        />
+				
+        <field
+            name="playersquads"
+            type="playersquads"
+            label="COM_JOOMSQUADS_PLAYER_SQUADS_LABEL"
+            description="COM_JOOMSQUADS_PLAYER_SQUADS_DESC"
+				
+        />
+				
+        <field
+            name="image"
+            type="media"
+            label="COM_JOOMSQUADS_IMAGE"
+            description="COM_JOOMSQUADS_IMAGE"
+            size="5"
+            directory="players"
+        />
+    </fieldset>
+</form>
