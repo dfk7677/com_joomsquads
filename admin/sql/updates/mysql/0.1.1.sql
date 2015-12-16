@@ -1,1 +1,0 @@
-ALTER TABLE `#__jsq_squads` ADD `published` TINYINT(4) DEFAULT '0' NOT NULL AFTER `ordering`
