@@ -44,10 +44,13 @@ defined('_JEXEC') or die('Restricted Access');
                     <th style="width: 2%;">
                         <?php echo JText::_('COM_JOOMSQUADS_ID'); ?>
                     </th>
-                    <th style="width: 22%;">
+                    <th style="width: 15%;">
                         <?php echo JText::_('COM_JOOMSQUADS_APPLICATION_NAME'); ?>
                     </th>
-                    <th style="width: 15%;">
+                    <th style="width: 12%;">
+                        <?php echo JText::_('COM_JOOMSQUADS_APPLICATION_EMAIL'); ?>
+                    </th>
+                    <th style="width: 10%;">
                         <?php echo JText::_('COM_JOOMSQUADS_APPLICATION_NICKNAME'); ?>
                     </th>
                     <th style="width: 8%;">
@@ -70,7 +73,7 @@ defined('_JEXEC') or die('Restricted Access');
             </thead>
             <tfoot>
                 <tr>
-                    <td colspan="10">
+                    <td colspan="11">
                         <?php echo $this->pagination->getListFooter(); ?>
                     </td>
                 </tr>
@@ -91,6 +94,9 @@ defined('_JEXEC') or die('Restricted Access');
                             </td>
 							<td align="center">
                                 <?php echo $row->name; ?>
+                            </td>
+                            <td align="center">
+                                <?php echo $row->email; ?>
                             </td>
                             <td >
                             	<?php if($row->status==0) {
