@@ -156,6 +156,7 @@ class JoomSquadsModelApplication extends JModelAdmin {
 			$add = 'δεν ';
 		}
 		//mail to moderators
+		$mailer = JFactory::getMailer();
 		$mailer->setSender('dfk_7677@heat-clan.gr','[ΗΕΑΤ]dfk_7677');
 		$mailer->addRecipient(explode(',',$params->get('moderators_emails')));
 		$mailer->isHTML(true);
